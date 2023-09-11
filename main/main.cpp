@@ -532,7 +532,7 @@ void loop()
     // Send every SEND_INTERVAL millis
     static uint32_t last = 0;
     static bool first = true;
-    if (Downlink)
+    /**if (Downlink)
     {
         Downlink = false;
         char temp = read(LittleFS, Configuration_SendFile_FILE);
@@ -545,7 +545,7 @@ void loop()
         char tem = read(LittleFS, Configuration_SendFile_FILE);
         int sendTemp = std::stoi(&tem);
         SEND_INTERVAL = (sendTemp * 60) * 1000;
-    }
+    }**/
 
     if (0 == last || millis() - last > SEND_INTERVAL)
     {

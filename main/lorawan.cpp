@@ -310,7 +310,7 @@ void lorawan_join()
     LMIC_setClockError(MAX_CLOCK_ERROR * CLOCK_ERROR / 100);
 #endif
 
-/**#if defined(CFG_eu868)
+#if defined(CFG_eu868)
 
     // Set up the channels used by the Things Network, which corresponds
     // to the defaults of most gateways. Without this, only three base
@@ -328,9 +328,9 @@ void lorawan_join()
     LMIC_setupChannel(5, 867500000, DR_RANGE_MAP(DR_SF12, DR_SF7), BAND_CENTI);  // g-band
     LMIC_setupChannel(6, 867700000, DR_RANGE_MAP(DR_SF12, DR_SF7), BAND_CENTI);  // g-band
     LMIC_setupChannel(7, 867900000, DR_RANGE_MAP(DR_SF12, DR_SF7), BAND_CENTI);  // g-band
-    LMIC_setupChannel(8, 868800000, DR_RANGE_MAP(DR_FSK, DR_FSK), BAND_MILLI);   // g2-band*/
+    LMIC_setupChannel(8, 868800000, DR_RANGE_MAP(DR_FSK, DR_FSK), BAND_MILLI);   // g2-band
 
-#if defined(CFG_us915)
+#elif defined(CFG_us915)
 
     // NA-US channels 0-71 are configured automatically
     // but only one group of 8 should (a subband) should be active
