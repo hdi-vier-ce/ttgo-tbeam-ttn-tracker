@@ -438,7 +438,7 @@ void setup()
 
     // Init GPS
     gps_setup();
-    Buttonsetup() ; 
+    Buttonsetup();
 
 // Show logo on first boot after removing battery
 #ifndef ALWAYS_SHOW_LOGO
@@ -476,10 +476,10 @@ void setup()
 
 void loop()
 {
+    LittleFS.begin(true);
     gps_loop();
     lorawan_loop();
     screen_loop();
-    LittleFS.begin(true);
 
     if (Read)
     {
